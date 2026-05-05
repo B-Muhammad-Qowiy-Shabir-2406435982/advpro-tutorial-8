@@ -1,68 +1,12 @@
-   0.212709400s  INFO prepare_target{force=false package_id=grpc-tutorial v0.1.0 (C:\Users\Qowiy\grpc-tutorial) target="grpc-client"}: cargo::core::compiler::fingerprint: fingerprint error for grpc-tutorial v0.1.0 (C:\Users\Qowiy\grpc-tutorial)/Check { test: false }/TargetInner { name: "grpc-client", doc: true, ..: with_path("C:\\Users\\Qowiy\\grpc-tutorial\\src\\grpc_client.rs", Edition2024) }
-   0.212835300s  INFO prepare_target{force=false package_id=grpc-tutorial v0.1.0 (C:\Users\Qowiy\grpc-tutorial) target="grpc-client"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\Qowiy\grpc-tutorial\target\debug\.fingerprint\grpc-tutorial-20dd9f85f5bbe341\bin-grpc-client`
-
-Caused by:
-    The system cannot find the file specified. (os error 2)
-
-Stack backtrace:
-   0: git_midx_writer_dump
-   1: git_midx_writer_dump
-   2: git_midx_writer_dump
-   3: git_midx_writer_dump
-   4: git_filter_source_repo
-   5: git_filter_source_repo
-   6: git_filter_source_repo
-   7: git_filter_source_repo
-   8: git_filter_source_repo
-   9: git_filter_source_repo
-  10: git_filter_source_repo
-  11: git_libgit2_prerelease
-  12: <unknown>
-  13: <unknown>
-  14: <unknown>
-  15: <unknown>
-  16: git_midx_writer_dump
-  17: git_filter_source_repo
-  18: git_midx_writer_dump
-  19: BaseThreadInitThunk
-  20: RtlUserThreadStart
-   0.280005300s  INFO prepare_target{force=false package_id=grpc-tutorial v0.1.0 (C:\Users\Qowiy\grpc-tutorial) target="grpc-client"}: cargo::core::compiler::fingerprint: stale: changed "C:\\Users\\Qowiy\\grpc-tutorial\\src\\grpc_client.rs"
-   0.280045000s  INFO prepare_target{force=false package_id=grpc-tutorial v0.1.0 (C:\Users\Qowiy\grpc-tutorial) target="grpc-client"}: cargo::core::compiler::fingerprint:           (vs) "C:\\Users\\Qowiy\\grpc-tutorial\\target\\debug\\.fingerprint\\grpc-tutorial-d65d43f828a06ad8\\dep-test-bin-grpc-client"
-   0.280055800s  INFO prepare_target{force=false package_id=grpc-tutorial v0.1.0 (C:\Users\Qowiy\grpc-tutorial) target="grpc-client"}: cargo::core::compiler::fingerprint:                FileTime { seconds: 13422457107, nanos: 878784300 } < FileTime { seconds: 13422459018, nanos: 789270800 }
-   0.299896300s  INFO prepare_target{force=false package_id=grpc-tutorial v0.1.0 (C:\Users\Qowiy\grpc-tutorial) target="grpc-client"}: cargo::core::compiler::fingerprint: fingerprint dirty for grpc-tutorial v0.1.0 (C:\Users\Qowiy\grpc-tutorial)/Check { test: true }/TargetInner { name: "grpc-client", doc: true, ..: with_path("C:\\Users\\Qowiy\\grpc-tutorial\\src\\grpc_client.rs", Edition2024) }
-   0.299957400s  INFO prepare_target{force=false package_id=grpc-tutorial v0.1.0 (C:\Users\Qowiy\grpc-tutorial) target="grpc-client"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleItem(ChangedFile { reference: "C:\\Users\\Qowiy\\grpc-tutorial\\target\\debug\\.fingerprint\\grpc-tutorial-d65d43f828a06ad8\\dep-test-bin-grpc-client", reference_mtime: FileTime { seconds: 13422457107, nanos: 878784300 }, stale: "C:\\Users\\Qowiy\\grpc-tutorial\\src\\grpc_client.rs", stale_mtime: FileTime { seconds: 13422459018, nanos: 789270800 } }))
-   0.303034500s  INFO prepare_target{force=false package_id=grpc-tutorial v0.1.0 (C:\Users\Qowiy\grpc-tutorial) target="grpc-server"}: cargo::core::compiler::fingerprint: fingerprint error for grpc-tutorial v0.1.0 (C:\Users\Qowiy\grpc-tutorial)/Check { test: false }/TargetInner { name: "grpc-server", doc: true, ..: with_path("C:\\Users\\Qowiy\\grpc-tutorial\\src\\grpc_server.rs", Edition2024) }
-   0.303084600s  INFO prepare_target{force=false package_id=grpc-tutorial v0.1.0 (C:\Users\Qowiy\grpc-tutorial) target="grpc-server"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\Qowiy\grpc-tutorial\target\debug\.fingerprint\grpc-tutorial-850cf018fd1a38f1\bin-grpc-server`
-
-Caused by:
-    The system cannot find the file specified. (os error 2)
-
-Stack backtrace:
-   0: git_midx_writer_dump
-   1: git_midx_writer_dump
-   2: git_midx_writer_dump
-   3: git_midx_writer_dump
-   4: git_filter_source_repo
-   5: git_filter_source_repo
-   6: git_filter_source_repo
-   7: git_filter_source_repo
-   8: git_filter_source_repo
-   9: git_filter_source_repo
-  10: git_filter_source_repo
-  11: git_libgit2_prerelease
-  12: <unknown>
-  13: <unknown>
-  14: <unknown>
-  15: <unknown>
-  16: git_midx_writer_dump
-  17: git_filter_source_repo
-  18: git_midx_writer_dump
-  19: BaseThreadInitThunk
-  20: RtlUserThreadStart
-   0.304380000s  INFO prepare_target{force=false package_id=grpc-tutorial v0.1.0 (C:\Users\Qowiy\grpc-tutorial) target="grpc-server"}: cargo::core::compiler::fingerprint: stale: changed "C:\\Users\\Qowiy\\grpc-tutorial\\src\\grpc_server.rs"
-   0.304405600s  INFO prepare_target{force=false package_id=grpc-tutorial v0.1.0 (C:\Users\Qowiy\grpc-tutorial) target="grpc-server"}: cargo::core::compiler::fingerprint:           (vs) "C:\\Users\\Qowiy\\grpc-tutorial\\target\\debug\\.fingerprint\\grpc-tutorial-517792a4526e6a5b\\dep-test-bin-grpc-server"
-   0.304415600s  INFO prepare_target{force=false package_id=grpc-tutorial v0.1.0 (C:\Users\Qowiy\grpc-tutorial) target="grpc-server"}: cargo::core::compiler::fingerprint:                FileTime { seconds: 13422457107, nanos: 877784100 } < FileTime { seconds: 13422459004, nanos: 804194300 }
-   0.304715400s  INFO prepare_target{force=false package_id=grpc-tutorial v0.1.0 (C:\Users\Qowiy\grpc-tutorial) target="grpc-server"}: cargo::core::compiler::fingerprint: fingerprint dirty for grpc-tutorial v0.1.0 (C:\Users\Qowiy\grpc-tutorial)/Check { test: true }/TargetInner { name: "grpc-server", doc: true, ..: with_path("C:\\Users\\Qowiy\\grpc-tutorial\\src\\grpc_server.rs", Edition2024) }
-   0.304745600s  INFO prepare_target{force=false package_id=grpc-tutorial v0.1.0 (C:\Users\Qowiy\grpc-tutorial) target="grpc-server"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleItem(ChangedFile { reference: "C:\\Users\\Qowiy\\grpc-tutorial\\target\\debug\\.fingerprint\\grpc-tutorial-517792a4526e6a5b\\dep-test-bin-grpc-server", reference_mtime: FileTime { seconds: 13422457107, nanos: 877784100 }, stale: "C:\\Users\\Qowiy\\grpc-tutorial\\src\\grpc_server.rs", stale_mtime: FileTime { seconds: 13422459004, nanos: 804194300 } }))
+   0.258339800s  INFO prepare_target{force=false package_id=grpc-tutorial v0.1.0 (C:\Users\Qowiy\grpc-tutorial) target="grpc-client"}: cargo::core::compiler::fingerprint: stale: changed "C:\\Users\\Qowiy\\grpc-tutorial\\src\\grpc_client.rs"
+   0.258411200s  INFO prepare_target{force=false package_id=grpc-tutorial v0.1.0 (C:\Users\Qowiy\grpc-tutorial) target="grpc-client"}: cargo::core::compiler::fingerprint:           (vs) "C:\\Users\\Qowiy\\grpc-tutorial\\target\\debug\\.fingerprint\\grpc-tutorial-20dd9f85f5bbe341\\dep-bin-grpc-client"
+   0.258425200s  INFO prepare_target{force=false package_id=grpc-tutorial v0.1.0 (C:\Users\Qowiy\grpc-tutorial) target="grpc-client"}: cargo::core::compiler::fingerprint:                FileTime { seconds: 13422459361, nanos: 552039200 } < FileTime { seconds: 13422459363, nanos: 888340600 }
+   0.258826700s  INFO prepare_target{force=false package_id=grpc-tutorial v0.1.0 (C:\Users\Qowiy\grpc-tutorial) target="grpc-client"}: cargo::core::compiler::fingerprint: fingerprint dirty for grpc-tutorial v0.1.0 (C:\Users\Qowiy\grpc-tutorial)/Check { test: false }/TargetInner { name: "grpc-client", doc: true, ..: with_path("C:\\Users\\Qowiy\\grpc-tutorial\\src\\grpc_client.rs", Edition2024) }
+   0.258883300s  INFO prepare_target{force=false package_id=grpc-tutorial v0.1.0 (C:\Users\Qowiy\grpc-tutorial) target="grpc-client"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleItem(ChangedFile { reference: "C:\\Users\\Qowiy\\grpc-tutorial\\target\\debug\\.fingerprint\\grpc-tutorial-20dd9f85f5bbe341\\dep-bin-grpc-client", reference_mtime: FileTime { seconds: 13422459361, nanos: 552039200 }, stale: "C:\\Users\\Qowiy\\grpc-tutorial\\src\\grpc_client.rs", stale_mtime: FileTime { seconds: 13422459363, nanos: 888340600 } }))
+   0.318008700s  INFO prepare_target{force=false package_id=grpc-tutorial v0.1.0 (C:\Users\Qowiy\grpc-tutorial) target="grpc-client"}: cargo::core::compiler::fingerprint: stale: changed "C:\\Users\\Qowiy\\grpc-tutorial\\src\\grpc_client.rs"
+   0.318047800s  INFO prepare_target{force=false package_id=grpc-tutorial v0.1.0 (C:\Users\Qowiy\grpc-tutorial) target="grpc-client"}: cargo::core::compiler::fingerprint:           (vs) "C:\\Users\\Qowiy\\grpc-tutorial\\target\\debug\\.fingerprint\\grpc-tutorial-d65d43f828a06ad8\\dep-test-bin-grpc-client"
+   0.318059700s  INFO prepare_target{force=false package_id=grpc-tutorial v0.1.0 (C:\Users\Qowiy\grpc-tutorial) target="grpc-client"}: cargo::core::compiler::fingerprint:                FileTime { seconds: 13422459361, nanos: 551029600 } < FileTime { seconds: 13422459363, nanos: 888340600 }
+   0.318650600s  INFO prepare_target{force=false package_id=grpc-tutorial v0.1.0 (C:\Users\Qowiy\grpc-tutorial) target="grpc-client"}: cargo::core::compiler::fingerprint: fingerprint dirty for grpc-tutorial v0.1.0 (C:\Users\Qowiy\grpc-tutorial)/Check { test: true }/TargetInner { name: "grpc-client", doc: true, ..: with_path("C:\\Users\\Qowiy\\grpc-tutorial\\src\\grpc_client.rs", Edition2024) }
+   0.318705700s  INFO prepare_target{force=false package_id=grpc-tutorial v0.1.0 (C:\Users\Qowiy\grpc-tutorial) target="grpc-client"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleItem(ChangedFile { reference: "C:\\Users\\Qowiy\\grpc-tutorial\\target\\debug\\.fingerprint\\grpc-tutorial-d65d43f828a06ad8\\dep-test-bin-grpc-client", reference_mtime: FileTime { seconds: 13422459361, nanos: 551029600 }, stale: "C:\\Users\\Qowiy\\grpc-tutorial\\src\\grpc_client.rs", stale_mtime: FileTime { seconds: 13422459363, nanos: 888340600 } }))
     Checking grpc-tutorial v0.1.0 (C:\Users\Qowiy\grpc-tutorial)
-    Finished `dev` profile [unoptimized + debuginfo] target(s) in 6.67s
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.67s

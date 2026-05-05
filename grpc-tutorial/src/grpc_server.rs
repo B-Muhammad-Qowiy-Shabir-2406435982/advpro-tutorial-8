@@ -1,3 +1,7 @@
+use services::transaction_service_server::{TransactionService, TransactionServiceServer};
+use services::{TransactionRequest, TransactionResponse};
+use tokio_stream::wrappers::ReceiverStream;
+use tokio::sync::mpsc;
 use tonic::{transport::Server, Request, Response, Status};
 
 pub mod services {
@@ -38,9 +42,51 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("🚀 Server jalan di {}", addr);
 
     Server::builder()
-        .add_service(PaymentServiceServer::new(service))
+        .add_service(PaymentServiceServer::new(MyPaymentService::default()))
+        .add_service(TransactionServiceServer::new(MyTransactionService::default()))
         .serve(addr)
         .await?;
 
     Ok(())
 }
+
+#[derive(Default)]
+pub struct MyTransactionService;
+
+#[tonic::async_trait]
+impl TransactionService for MyTransactionService {
+
+    type GetTransactionHistoryStream = ReceiverStream<Result<TransactionResponse, Status>>;
+
+    async fn get_transaction_history(
+        &self,
+        request: Request<TransactionRequest>,
+    ) -> Result<Response<Self::GetTransactionHistoryStream>, Status> {
+
+        let req = request.into_inner();
+        println!("📜 Ambil transaksi user: {}", req.user_id);
+
+        let (tx, rx) = mpsc::channel(4);
+
+        tokio::spawn(async move {
+            let transactions = vec![
+                ("trx1", "SUCCESS", 100.0),
+                ("trx2", "FAILED", 50.0),
+                ("trx3", "SUCCESS", 200.0),
+            ];
+
+            for (id, status, amount) in transactions {
+                let response = TransactionResponse {
+                    transaction_id: id.to_string(),
+                    status: status.to_string(),
+                    amount,
+                    timestamp: "2025-01-01".to_string(),
+                };
+
+                tx.send(Ok(response)).await.unwrap();
+            }
+        });
+
+        Ok(Response::new(ReceiverStream::new(rx)))
+    }
+}   
