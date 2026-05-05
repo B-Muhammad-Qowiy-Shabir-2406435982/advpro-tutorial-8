@@ -1,0 +1,1 @@
+C:\Users\Qowiy\grpc-tutorial\target\debug\grpc-client.exe: C:\Users\Qowiy\grpc-tutorial\build.rs C:\Users\Qowiy\grpc-tutorial\proto C:\Users\Qowiy\grpc-tutorial\proto/services.proto C:\Users\Qowiy\grpc-tutorial\src\grpc_client.rs C:\Users\Qowiy\grpc-tutorial\target\debug\build\grpc-tutorial-1125e2c6d8912a25\out\services.rs
