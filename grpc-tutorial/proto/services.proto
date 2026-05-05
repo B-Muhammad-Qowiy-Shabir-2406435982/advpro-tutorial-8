@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package services;
+
+// ===== Payment Service (Unary) =====
+service PaymentService {
+  rpc ProcessPayment (PaymentRequest) returns (PaymentResponse);
+}
+
+// ===== Transaction Service (Server Streaming) =====
+service TransactionService {
+  rpc GetTransactionHistory (TransactionRequest) returns (stream TransactionResponse);
+}
+
+// ===== Chat Service (Bi-Directional Streaming) =====
+service ChatService {
+  rpc Chat (stream ChatMessage) returns (stream ChatMessage);
+}
+
+// ===== Messages =====
+
+// Payment
+message PaymentRequest {
+  string user_id = 1;
+  double amount = 2;
+}
+
+message PaymentResponse {
+  bool success = 1;
+}
+
+// Transaction
+message TransactionRequest {
+  string user_id = 1;
+}
+
+message TransactionResponse {
+  string transaction_id = 1;
+  string status = 2;
+  double amount = 3;
+  string timestamp = 4;
+}
+
+// Chat
+message ChatMessage {
+  string user_id = 1;
+  string message = 2;
+}
