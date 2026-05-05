@@ -1,5 +1,7 @@
 use services::transaction_service_server::{TransactionService, TransactionServiceServer};
 use services::{TransactionRequest, TransactionResponse};
+use services::chat_service_server::{ChatService, ChatServiceServer};
+use services::ChatMessage;
 use tokio_stream::wrappers::ReceiverStream;
 use tokio::sync::mpsc;
 use tonic::{transport::Server, Request, Response, Status};
@@ -44,6 +46,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     Server::builder()
         .add_service(PaymentServiceServer::new(MyPaymentService::default()))
         .add_service(TransactionServiceServer::new(MyTransactionService::default()))
+        .add_service(ChatServiceServer::new(MyChatService::default()))
         .serve(addr)
         .await?;
 
@@ -90,3 +93,37 @@ impl TransactionService for MyTransactionService {
         Ok(Response::new(ReceiverStream::new(rx)))
     }
 }   
+
+#[derive(Default)]
+pub struct MyChatService;
+
+#[tonic::async_trait]
+impl ChatService for MyChatService {
+
+    type ChatStream = ReceiverStream<Result<ChatMessage, Status>>;
+
+    async fn chat(
+        &self,
+        request: Request<tonic::Streaming<ChatMessage>>,
+    ) -> Result<Response<Self::ChatStream>, Status> {
+
+        let mut stream = request.into_inner();
+
+        let (tx, rx) = mpsc::channel(4);
+
+        tokio::spawn(async move {
+            while let Some(msg) = stream.message().await.unwrap() {
+                println!("💬 Dari {}: {}", msg.user_id, msg.message);
+
+                let reply = ChatMessage {
+                    user_id: "server".to_string(),
+                    message: format!("Echo: {}", msg.message),
+                };
+
+                tx.send(Ok(reply)).await.unwrap();
+            }
+        });
+
+        Ok(Response::new(ReceiverStream::new(rx)))
+    }
+}
